@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | NEXUS GAMING</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .contact-section {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 40px;
+        }
+
+        .contact-info, .contact-form {
+            background: #151515;
+            padding: 30px;
+            border: 1px solid #292929;
+            border-radius: 12px;
+        }
+
+        .contact-section h1,
+        .contact-section h2 {
+            color: #ff3030;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 15px;
+            background: #222;
+            border: 1px solid #444;
+            border-radius: 6px;
+            color: white;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+
+        .contact-form textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            background: #ff3030;
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        .contact-form button:hover {
+            background: #cc2020;
+        }
+
+        #successMessage {
+            display: none;
+            color: #4dff88;
+            margin-top: 20px;
+        }
+
+        #errorMessage {
+            display: none;
+            color: #ff5555;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 750px) {
+            .contact-section {
+                grid-template-columns: 1fr;
+                margin: 25px auto;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- LOADING SCREEN -->
+    <div id="loading-screen">
+        <div class="loader-logo">NEXUS GAMING</div>
+        <div class="loader-line">
+            <div class="loader-progress"></div>
+        </div>
+        <div class="loader-text">LOADING EXPERIENCE...</div>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">NEXUS GAMING</div>
+
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="games.html">GAMES</a>
+            <a href="news.html">NEWS</a>
+            <a href="about.html">ABOUT</a>
+            <a href="contact.html" class="active">CONTACT</a>
+        </nav>
+    </header>
+
+    <!-- CONTACT SECTION -->
+    <main>
+        <section class="contact-section">
+
+            <div class="contact-info">
+                <h1>CONTACT US</h1>
+
+                <p>
+                    Have questions, suggestions or feedback?
+                    We'd love to hear from you!
+                </p>
+
+                <h2>Get In Touch</h2>
+
+                <p>
+                    <strong>Website:</strong><br>
+                    NEXUS GAMING
+                </p>
+
+                <p>
+                    <strong>Email:</strong><br>
+                    Contact us using the form.
+                </p>
+
+                <p>
+                    <strong>Response Time:</strong><br>
+                    We aim to respond as soon as possible.
+                </p>
+            </div>
+
+            <div class="contact-form">
+                <h2>SEND US A MESSAGE</h2>
+
+                <form onsubmit="sendMessage(event)">
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Your Name"
+                        required
+                    >
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Your Email"
+                        required
+                    >
+
+                    <input
+                        type="text"
+                        id="subject"
+                        placeholder="Subject"
+                        required
+                    >
+
+                    <textarea
+                        id="message"
+                        placeholder="Write your message..."
+                        required
+                    ></textarea>
+
+                    <button type="submit" id="submitButton">
+                        SEND MESSAGE
+                    </button>
+
+                </form>
+
+                <p id="successMessage">
+                    Your message has been submitted!
+                </p>
+
+                <p id="errorMessage">
+                    Unable to submit. Please try again.
+                </p>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 NEXUS GAMING. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // GOOGLE SHEETS WEB APP URL
+        const scriptURL = "https://script.google.com/macros/s/AKfycby-AbgqBBRKpvaMtL7BoJdztS2ZRfFWg2ia8GcjtwK5_36dBCXWMoazUwR1465kf2k2aw/exec";
+
+        // CONTACT FORM SUBMISSION
+        function sendMessage(event) {
+            event.preventDefault();
+
+            const form = event.target;
+            const button = document.getElementById("submitButton");
+            const success = document.getElementById("successMessage");
+            const error = document.getElementById("errorMessage");
+
+            success.style.display = "none";
+            error.style.display = "none";
+
+            if (scriptURL === "PASTE_YOUR_WEB_APP_URL_HERE") {
+                alert("Please add your Google Apps Script URL first.");
+                return;
+            }
+
+            button.disabled = true;
+            button.textContent = "SENDING...";
+
+            const params = new URLSearchParams({
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                subject: document.getElementById("subject").value,
+                message: document.getElementById("message").value
+            });
+
+            fetch(scriptURL, {
+                method: "POST",
+                mode: "no-cors",
+                body: params
+            })
+            .then(() => {
+                success.textContent =
+                    "Your message was submitted! Check your spreadsheet to confirm.";
+                success.style.display = "block";
+                form.reset();
+            })
+            .catch(() => {
+                error.style.display = "block";
+            })
+            .finally(() => {
+                button.disabled = false;
+                button.textContent = "SEND MESSAGE";
+            });
+        }
+
+        // LOADING SCREEN
+        window.addEventListener("load", function() {
+            const loader = document.getElementById("loading-screen");
+
+            if (loader) {
+                setTimeout(function() {
+                    loader.classList.add("hide");
+                }, 800);
+            }
+        });
+    </script>
+
+</body>
+</html>

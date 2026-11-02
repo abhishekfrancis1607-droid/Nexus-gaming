@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming News | NEXUS GAMING</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .news-heading {
+            text-align: center;
+            padding: 60px 20px 35px;
+        }
+
+        .news-heading h1 {
+            color: #ff3030;
+            font-size: 42px;
+            text-transform: uppercase;
+        }
+
+        .news-heading p {
+            color: #aaa;
+            margin-top: 10px;
+        }
+
+        .featured-news {
+            margin: 20px 8% 50px;
+            min-height: 350px;
+            background:
+                linear-gradient(90deg, #080808 10%, transparent 100%),
+                url("https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1400")
+                center/cover;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            padding: 45px;
+            border: 1px solid #292929;
+        }
+
+        .featured-content {
+            max-width: 520px;
+        }
+
+        .news-tag {
+            color: #ff3030;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .featured-content h2 {
+            font-size: 36px;
+            margin: 15px 0;
+            color: white;
+        }
+
+        .featured-content p {
+            color: #ccc;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .latest-title {
+            text-align: center;
+            color: white;
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            padding: 0 8% 70px;
+        }
+
+        .news-card {
+            background: #151515;
+            border: 1px solid #292929;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-8px);
+            border-color: #ff3030;
+            box-shadow: 0 0 18px #ff303044;
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .news-content {
+            padding: 20px;
+        }
+
+        .news-content span {
+            color: #ff3030;
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .news-content h3 {
+            color: white;
+            margin: 12px 0;
+            font-size: 20px;
+        }
+
+        .news-content p {
+            color: #aaa;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        @media(max-width: 600px) {
+            .featured-news {
+                padding: 25px;
+                min-height: 300px;
+                margin: 15px;
+            }
+
+            .featured-content h2 {
+                font-size: 27px;
+            }
+
+            .news-heading h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<script>
+    window.addEventListener("load", function() {
+        const loader = document.getElementById("loading-screen");
+
+        setTimeout(function() {
+            loader.classList.add("hide");
+        }, 800);
+    });
+</script>
+
+
+<body>
+    
+<div id="loading-screen">
+    <div class="loader-logo">NEXUS GAMING</div>
+
+    <div class="loader-line">
+        <div class="loader-progress"></div>
+    </div>
+
+    <div class="loader-text">LOADING EXPERIENCE...</div>
+</div>
+
+
+<header>
+    <div class="logo">NEXUS GAMING</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="games.html">Games</a>
+        <a href="news.html">News</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="news-heading">
+    <h1>Gaming News</h1>
+    <p>Stay updated with the latest gaming world stories.</p>
+</section>
+
+<section class="featured-news">
+    <div class="featured-content">
+        <span class="news-tag">FEATURED STORY</span>
+
+        <h2>The Future of Gaming Starts Here</h2>
+
+        <p>
+            Discover the technology, creativity and innovation
+            shaping the next generation of gaming experiences.
+        </p>
+
+        <a href="#latest-news" class="btn">Explore News</a>
+    </div>
+</section>
+
+<h2 class="latest-title" id="latest-news">LATEST STORIES</h2>
+
+<section class="news-grid">
+
+    <div class="news-card">
+        <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=800" alt="Gaming console">
+        <div class="news-content">
+            <span>TECHNOLOGY</span>
+            <h3>Next Generation Gaming</h3>
+            <p>Explore how new technology is changing the gaming experience.</p>
+        </div>
+    </div>
+
+    <div class="news-card">
+        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800" alt="Gaming event">
+        <div class="news-content">
+            <span>ESPORTS</span>
+            <h3>The Rise of Esports</h3>
+            <p>Competitive gaming continues to attract players and fans worldwide.</p>
+        </div>
+    </div>
+
+    <div class="news-card">
+        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800" alt="Gaming controller">
+        <div class="news-content">
+            <span>GAMING</span>
+            <h3>Games Worth Exploring</h3>
+            <p>Discover different gaming worlds, genres and experiences.</p>
+        </div>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 NEXUS GAMING | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

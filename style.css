@@ -1,0 +1,567 @@
+
+/* =================================
+   NEXUS GAMING - PREMIUM CSS
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #090909;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* =================================
+   NAVIGATION BAR
+================================= */
+
+header {
+    background: #111;
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #292929;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(255, 48, 48, 0.5);
+}
+
+.logo span {
+    color: #ff3030;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    position: relative;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #ff3030;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #ff3030;
+    bottom: -7px;
+    left: 0;
+    transition: 0.3s;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
+/* =================================
+   MAIN HERO SECTION
+================================= */
+
+.hero {
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    padding: 70px 10%;
+
+    background:
+    linear-gradient(
+        90deg,
+        #090909 15%,
+        rgba(9,9,9,0.65)
+    ),
+    url("https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1600")
+    center/cover;
+}
+
+.hero-content {
+    max-width: 650px;
+    animation: fadeUp 1.2s ease;
+}
+
+.hero h1 {
+    font-size: 55px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #ff3030;
+    text-shadow: 0 0 15px rgba(255,48,48,0.6);
+}
+
+.tag {
+    color: #ff3030;
+    letter-spacing: 3px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero p:not(.tag) {
+    color: #bbb;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* =================================
+   BUTTONS
+================================= */
+
+.btn {
+    display: inline-block;
+    background: #ff3030;
+    color: white;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 12px rgba(255,48,48,0.3);
+}
+
+.btn:hover {
+    background: #cc1717;
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(255,48,48,0.8);
+}
+
+/* =================================
+   FEATURED GAME SECTION
+================================= */
+
+.featured-game {
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    padding: 60px 9%;
+
+    background:
+    linear-gradient(
+        90deg,
+        #090909 10%,
+        rgba(9,9,9,0.45)
+    ),
+    url("https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1600")
+    center/cover;
+
+    border-top: 1px solid #3b1515;
+    border-bottom: 1px solid #3b1515;
+}
+
+.featured-content {
+    max-width: 550px;
+    animation: fadeUp 1s ease;
+}
+
+.featured-content h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.featured-content h1 span {
+    color: #ff3030;
+    text-shadow: 0 0 15px rgba(255,48,48,0.7);
+}
+
+.featured-content p:not(.tag) {
+    color: #ddd;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+/* =================================
+   GENERAL SECTIONS
+================================= */
+
+.section {
+    padding: 75px 8%;
+    text-align: center;
+    background: linear-gradient(
+        180deg,
+        #090909,
+        #111111
+    );
+}
+
+.section h1,
+.section h2 {
+    font-size: 35px;
+    margin-bottom: 35px;
+}
+
+h1 span,
+h2 span {
+    color: #ff3030;
+}
+
+/* =================================
+   GAME CARDS
+================================= */
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin: 35px 0;
+    text-align: left;
+}
+
+.game-card {
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-8px);
+    border-color: #ff3030;
+    box-shadow: 0 0 20px rgba(255,48,48,0.25);
+}
+
+.game-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.game-card:hover img {
+    transform: scale(1.06);
+}
+
+.game-card h3 {
+    padding: 15px 15px 5px;
+    font-size: 20px;
+}
+
+.game-card p {
+    color: #aaa;
+    padding: 8px 15px 20px;
+    line-height: 1.6;
+}
+
+/* =================================
+   BOTTOM BANNER
+================================= */
+
+.banner {
+    background: #171010;
+    border-top: 1px solid #391515;
+    border-bottom: 1px solid #391515;
+    padding: 65px 20px;
+    text-align: center;
+}
+
+.banner h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.banner p {
+    color: #bbb;
+    margin-bottom: 25px;
+}
+
+/* =================================
+   SEARCH BOX
+================================= */
+
+.search {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    background: #171717;
+    border: 1px solid #444;
+    color: white;
+    outline: none;
+    margin-bottom: 25px;
+}
+
+.search:focus {
+    border-color: #ff3030;
+}
+
+/* =================================
+   ABOUT PAGE
+================================= */
+
+.about {
+    max-width: 850px;
+    margin: auto;
+    padding: 70px 25px;
+    text-align: center;
+}
+
+.about h1 {
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.about img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    margin-bottom: 35px;
+}
+
+.about h2 {
+    margin: 25px 0 15px;
+}
+
+.about p:not(.tag) {
+    color: #bbb;
+    line-height: 1.9;
+    margin-bottom: 15px;
+}
+
+/* =================================
+   CONTACT PAGE
+================================= */
+
+.contact {
+    max-width: 650px;
+    margin: auto;
+    padding: 70px 25px;
+    text-align: center;
+}
+
+.contact h1 {
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+form input,
+form textarea {
+    background: #171717;
+    border: 1px solid #444;
+    padding: 15px;
+    color: white;
+    font-family: Arial, sans-serif;
+    outline: none;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #ff3030;
+}
+
+form button {
+    align-self: flex-start;
+}
+
+#message {
+    color: #ff5050;
+    margin-top: 20px;
+}
+
+/* =================================
+   FOOTER
+================================= */
+
+footer {
+    background: #111;
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #292929;
+}
+
+footer h2 {
+    text-shadow: 0 0 12px rgba(255,48,48,0.3);
+}
+
+footer span {
+    color: #ff3030;
+}
+
+footer p {
+    color: #888;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+/* =================================
+   ANIMATIONS
+================================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =================================
+   MOBILE RESPONSIVENESS
+================================= */
+
+@media (max-width: 768px) {
+
+    header {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .hero {
+        min-height: 450px;
+        padding: 50px 7%;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .featured-game {
+        min-height: 380px;
+        padding: 40px 7%;
+    }
+
+    .featured-content h1 {
+        font-size: 34px;
+    }
+
+    .game-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section h1,
+    .section h2 {
+        font-size: 28px;
+    }
+
+    .banner h2 {
+        font-size: 30px;
+    }
+
+}
+
+
+
+/* NEXUS GAMING LOADING SCREEN */
+
+#loading-screen {
+    position: fixed;
+    inset: 0;
+    background: #050505;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    transition: opacity 0.7s ease, visibility 0.7s ease;
+}
+
+#loading-screen.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-logo {
+    color: #ff3030;
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-shadow: 0 0 15px #ff3030;
+    animation: logoPulse 1.2s infinite alternate;
+}
+
+.loader-line {
+    width: 200px;
+    height: 4px;
+    background: #292929;
+    margin-top: 25px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.loader-progress {
+    width: 40%;
+    height: 100%;
+    background: #ff3030;
+    box-shadow: 0 0 12px #ff3030;
+    animation: loadingMove 1.2s infinite ease-in-out;
+}
+
+.loader-text {
+    color: #888;
+    margin-top: 15px;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+@keyframes loadingMove {
+    from {
+        transform: translateX(-110%);
+    }
+    to {
+        transform: translateX(350%);
+    }
+}
+
+@keyframes logoPulse {
+    from {
+        opacity: 0.6;
+        transform: scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.03);
+    }
+}
+

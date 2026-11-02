@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | NEXUS GAMING</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .about-hero {
+            min-height: 370px;
+            background:
+                linear-gradient(90deg, #080808 10%, #080808bb 60%, transparent),
+                url("https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1400")
+                center/cover;
+            display: flex;
+            align-items: center;
+            padding: 50px 9%;
+        }
+
+        .about-hero-content {
+            max-width: 600px;
+        }
+
+        .about-hero h1 {
+            color: white;
+            font-size: 48px;
+            text-transform: uppercase;
+        }
+
+        .about-hero h1 span {
+            color: #ff3030;
+        }
+
+        .about-hero p {
+            color: #ccc;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+
+        .about-section {
+            padding: 70px 9%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 45px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid #333;
+            box-shadow: 0 0 25px #ff303033;
+        }
+
+        .about-text h2 {
+            color: #ff3030;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #bbb;
+            line-height: 1.9;
+            margin-bottom: 15px;
+        }
+
+        .mission {
+            background: #151515;
+            text-align: center;
+            padding: 65px 10%;
+            border-top: 1px solid #292929;
+            border-bottom: 1px solid #292929;
+        }
+
+        .mission h2 {
+            color: #ff3030;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .mission p {
+            max-width: 750px;
+            margin: auto;
+            color: #bbb;
+            line-height: 1.9;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 60px 9%;
+            text-align: center;
+        }
+
+        .stat-box {
+            background: #151515;
+            border: 1px solid #292929;
+            padding: 30px 15px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .stat-box:hover {
+            border-color: #ff3030;
+            transform: translateY(-6px);
+            box-shadow: 0 0 15px #ff303044;
+        }
+
+        .stat-box h3 {
+            color: #ff3030;
+            font-size: 35px;
+        }
+
+        .stat-box p {
+            color: #aaa;
+            margin-top: 10px;
+        }
+
+        @media(max-width: 768px) {
+            .about-section {
+                grid-template-columns: 1fr;
+            }
+
+            .about-hero h1 {
+                font-size: 35px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    
+<script>
+    window.addEventListener("load", function() {
+        const loader = document.getElementById("loading-screen");
+
+        setTimeout(function() {
+            loader.classList.add("hide");
+        }, 800);
+    });
+</script>
+
+</head>
+
+<body>
+    
+<div id="loading-screen">
+    <div class="loader-logo">NEXUS GAMING</div>
+
+    <div class="loader-line">
+        <div class="loader-progress"></div>
+    </div>
+
+    <div class="loader-text">LOADING EXPERIENCE...</div>
+</div>
+
+
+<header>
+    <div class="logo">NEXUS GAMING</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="games.html">Games</a>
+        <a href="news.html">News</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="about-hero">
+    <div class="about-hero-content">
+        <h1>ABOUT <span>NEXUS</span></h1>
+
+        <p>
+            More than gaming. It's a world of passion,
+            entertainment, technology and endless possibilities.
+            Welcome to the next level of gaming.
+        </p>
+
+        <a href="games.html" class="btn">Explore Games</a>
+    </div>
+</section>
+
+<section class="about-section">
+
+    <div class="about-image">
+        <img
+            src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=900"
+            alt="Gaming setup">
+    </div>
+
+    <div class="about-text">
+        <h2>OUR STORY</h2>
+
+        <p>
+            NEXUS GAMING is a gaming-themed platform created
+            for people who love the world of video games.
+        </p>
+
+        <p>
+            Our goal is to bring gaming entertainment,
+            interesting stories and gaming information
+            together in one place.
+        </p>
+
+        <p>
+            From exciting game discoveries to the latest
+            gaming trends, NEXUS GAMING is all about
+            exploring the gaming universe.
+        </p>
+    </div>
+
+</section>
+
+<section class="mission">
+    <h2>OUR MISSION</h2>
+
+    <p>
+        Our mission is to create an engaging platform where
+        gamers can explore games, discover gaming news
+        and experience the excitement of the gaming world.
+        We believe gaming brings creativity, entertainment
+        and people together.
+    </p>
+</section>
+
+<section class="stats">
+
+    <div class="stat-box">
+        <h3>01</h3>
+        <p>One Gaming Community</p>
+    </div>
+
+    <div class="stat-box">
+        <h3>∞</h3>
+        <p>Endless Possibilities</p>
+    </div>
+
+    <div class="stat-box">
+        <h3>24/7</h3>
+        <p>Gaming Passion</p>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 NEXUS GAMING | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
